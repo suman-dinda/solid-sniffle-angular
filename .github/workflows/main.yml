@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Docker
         run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/$DOCKER_REPO:$BUILD_NUMBER  -f Dockerfile .
+          docker build -t "sumandinda/$DOCKER_REPO:$BUILD_NUMBER"  -f Dockerfile .
 
       - shell: bash
         env:
