@@ -44,6 +44,7 @@ jobs:
           docker build -t "$DOCKER_REPO:$BUILD_NUMBER"  -f Dockerfile .
 
       - shell: bash
+        name: Docker Push to registry
         env:
           DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
         run: |
