@@ -37,8 +37,6 @@ jobs:
           npm run build
 
       - name: Build Docker
-        env:
-           repos
         run: |
           docker build -t $DOCKER_REPO:$BUILD_NUMBER  -f Dockerfile .
 
