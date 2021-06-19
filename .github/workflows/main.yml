@@ -42,8 +42,7 @@ jobs:
 
       - shell: bash
         env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          echo $DOCKER_PASS | docker login -u sumandinda --password-stdin
           docker push $DOCKER_REPO:$BUILD_NUMBER
