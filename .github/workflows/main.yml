@@ -49,3 +49,7 @@ jobs:
         run: |
           echo $DOCKER_PASS | docker login -u sumandinda --password-stdin
           docker push $DOCKER_REPO:$BUILD_NUMBER
+      - name: Kubectl tool installer
+        uses: Azure/setup-kubectl@v1 
+      
+      
