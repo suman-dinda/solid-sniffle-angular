@@ -20,7 +20,8 @@ jobs:
     # The type of runner that the job will run on
     env:
       DOCKER_REPO: "sumandinda/angulartest"
-      BUILD_NUMBER: ${{ github.run_id }}${{ github.run_number }}
+      BUILD_NUMBER: "${{ github.run_id }}.${{ github.run_number }}"
+      BRANCH_NAME: ${{github.branch}}
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -30,7 +31,8 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a shell script
-        run: echo Hello, world!
+        run: "echo Hello, world! This stage will run when branch is main"
+        if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: NPM Build
         run: |
